@@ -1,0 +1,132 @@
+page,.page {
+  height: 100%;
+  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+}
+.page-bottom{
+  height: 100%;
+  width: 750rpx;
+  position: fixed; 
+  background-color: rgb(0, 68, 97);
+  z-index: 0;
+}
+.wc{
+  color: white;
+  padding: 30rpx 0 10rpx 40rpx;
+}
+.page-content{
+  padding-top: 150rpx;
+  font-size: 24rpx;
+  overflow:auto;
+}
+
+
+
+.page-top{
+  height: 100%;
+  position: relative;
+  width: 750rpx;
+  background-color: #fff;
+  z-index: 0;
+  transition: All 0.4s ease; 
+  -webkit-transition: All 0.4s ease;
+}
+.page-hd{
+  /* position: fixed;
+  top: 0;
+  z-index: 999; */
+  background-color: skyblue;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.page-hd image{
+  padding: 20rpx;
+  display: block;
+  width: 68rpx;
+  height: 38rpx;
+}
+/* .page-hd .placeholder{
+  height: 100rpx;
+  width: 100%;
+} */
+
+.page-bd-top{
+  position: relative;
+}
+.page-bd-top image{
+  width: 100%;
+  height: 400rpx;
+}
+.page-bd-top .topimage-title{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20rpx;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+
+}
+.c-state1{
+  transform: rotate(0deg) scale(1) translate(75%,0%); 
+  -webkit-transform: rotate(0deg) scale(1) translate(75%,0%); 
+}
+.c-state2{
+  transform: rotate(0deg) scale(.8) translate(75%,0%); 
+  -webkit-transform: rotate(0deg) scale(.8) translate(75%,0%); 
+}
+
+/* 
+  新闻列表
+ */
+ .newslist{
+   background-color: rgb(243, 243, 243);
+   height: 100%;
+ }
+.swiper{
+  position: relative;
+  height: 350rpx;
+}
+.swiper image{
+  height: 350rpx;
+  width: 100%;
+}
+
+.top_stories-title{
+  position: absolute;
+  color: #fff;
+  font-size: 39rpx;
+  text-shadow: gray;
+  bottom: 0;
+  left: 0;
+  padding: 40rpx 20rpx;
+}
+
+
+.subtitle{
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.news-item{
+  background-color: #fff;
+  margin: 20rpx;
+  /* margin-top: 0; */
+  padding: 20rpx;
+  border-radius: 10rpx;
+  display: flex;
+}
+
+/* .newslist:first-child{
+  margin-top: 0;
+} */
+.title-news{
+  flex: 1;
+}
+.img-news{
+  margin-left: 20rpx;
+  height: 150rpx;
+  width: 150rpx;
+  /* border: 1rpx solid; */
+}

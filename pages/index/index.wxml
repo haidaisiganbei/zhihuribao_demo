@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="page-bottom">
+    <view class="page-content">
+      <view bindtap='getLstest' class='wc'>首页</view>
+      <block wx:for="{{themes}}" >
+        <view bindtap='changeThemes' data-id='{{item.id}}' class='wc'>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+  <view bindtouchmove="tap_drag" bindtouchend="tap_end" bindtouchstart="tap_start" class="page-top {{open ? 'c-state1' : ''}}" style="{{translate}}">
+    <view class='page-hd'>
+      
+      <image bindtap="tap_ch" src="../../images/btn.png"></image>
+      <view wx:if="{{themeName!=''}}">{{themeName}}</view>
+      <view wx:else>首页</view>
+    </view>
+
+
+    <view class='page-bd'>
+      <!-- 主题图片和标题 -->
+      <view wx:if="{{topimage!=''}}" class='page-bd-top'>
+        <image mode='left' src='{{topimage}}'></image>
+        <view class='topimage-title'>{{topdescription}}</view>
+      </view>
+      <!-- 轮播图 -->
+      <swiper wx:else class='swiper' indicator-dots indicator-active-color="#fff">
+        <block wx:for="{{top_stories}}" >
+          <swiper-item class="swiper-item">
+            <image mode='aspectFill' src='{{item.image}}'></image>
+            <view class='top_stories-title'>{{item.title}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+
+
+      <view class='newslist'>
+        <view class='subtitle'>今日热文</view>
+        <block wx:for="{{stories}}" >
+          <navigator url='details?id={{item.id}}' class='news-item'>
+            <view class='title-news'>{{item.title}}</view>
+            <image wx:if="{{item.images[0]}}" class='img-news' src='{{item.images[0]}}' />
+          </navigator>
+        </block>
+      </view>
+
+      <!-- 历史消息 -->
+      <view wx:if="{{!themeId || themeId==''}}" class='newslist'>
+        <block wx:for="{{history}}" >
+          <view class='subtitle'>{{item.date}}</view>
+          <block wx:for="{{item.stories}}" wx:for-item='listitem' >
+            <navigator url='details?id={{listitem.id}}' class='news-item'>
+              <view class='title-news'>{{listitem.title}}</view>
+              <image wx:if="{{listitem.images[0]}}" class='img-news' src='{{listitem.images[0]}}' />
+            </navigator>
+          </block>
+        </block>
+
+      </view>
+    </view>
+  </view>
+</view>
